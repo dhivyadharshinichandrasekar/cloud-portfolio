@@ -1,1 +1,1 @@
-console.log("Neon Portfolio Loaded");
+console.log("NEON PORTFOLIO LOADED");
