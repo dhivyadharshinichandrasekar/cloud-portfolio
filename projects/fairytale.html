@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>FairyTale Family OTT Platform</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <title>FairyTale | DevOps Project</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-<section class="projects">
+<div class="hero">
 
-<h1>FairyTale – Family Entertainment OTT Platform</h1>
+    <h1 class="name">FairyTale</h1>
 
-<p>
+    <h2 class="role">Family Entertainment OTT Platform</h2>
 
-FairyTale is a family-focused OTT streaming platform designed to deliver safe and engaging entertainment.
+    <p class="experience">
+        Built a containerized family-friendly OTT platform 
+        with full DevOps automation and production-grade observability.
+    </p>
 
-DevOps Implementation:
+    <div class="projects" style="margin-top:50px;">
 
-Docker used to containerize the application services.
+        <div class="card">
+            <h4>🐳 Dockerized Microservices</h4>
+            <p>
+                Developed and containerized authentication,
+                content management, and streaming services.
+                Implemented Docker Compose for local testing environments.
+            </p>
+        </div>
 
-Jenkins CI/CD pipelines automated build and deployment process.
+        <div class="card">
+            <h4>☸ Kubernetes Orchestration</h4>
+            <p>
+                Managed deployments using Kubernetes manifests.
+                Configured rolling updates, readiness probes,
+                and liveness checks for zero-downtime releases.
+            </p>
+        </div>
 
-Kubernetes used for container orchestration and scaling.
+        <div class="card">
+            <h4>🔍 SonarQube Quality Gates</h4>
+            <p>
+                Integrated SonarQube into CI pipeline to enforce
+                code quality standards and detect vulnerabilities
+                before production deployment.
+            </p>
+        </div>
 
-Terraform used for infrastructure provisioning.
+        <div class="card">
+            <h4>📊 Monitoring & Alerts</h4>
+            <p>
+                Configured Prometheus alert manager for service health.
+                Built Grafana dashboards to monitor user sessions,
+                streaming uptime, and container performance.
+            </p>
+        </div>
 
-SonarQube used for automated security and quality analysis.
+    </div>
 
-Prometheus and Grafana used for monitoring and alerting.
+    <a href="../index.html" class="download-btn">⬅ Back to Portfolio</a>
 
-Features:
-
-Family friendly streaming platform
-
-Content management dashboard
-
-Search and filtering system
-
-Role based access control
-
-DevOps monitoring dashboards
-
-</p>
-
-</section>
+</div>
 
 </body>
-
 </html>

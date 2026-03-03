@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>DreamStream Cloud Platform</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <title>DreamStream | DevOps Project</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-<section class="projects">
+<div class="hero">
 
-<h1>DreamStream – Cloud Live Streaming Platform</h1>
+    <h1 class="name">DreamStream</h1>
 
-<p>
+    <h2 class="role">Cloud Live Streaming Architecture</h2>
 
-DreamStream is a scalable cloud-native streaming platform designed to support high traffic video streaming.
+    <p class="experience">
+        Architected a multi-region live streaming platform 
+        capable of handling high traffic and real-time analytics.
+    </p>
 
-DevOps Implementation:
+    <div class="projects" style="margin-top:50px;">
 
-Infrastructure provisioned using Terraform.
+        <div class="card">
+            <h4>🌍 Multi-Region Deployment</h4>
+            <p>
+                Designed Kubernetes clusters across multiple zones
+                with load balancing and high availability.
+                Implemented horizontal pod autoscaler (HPA)
+                to manage live streaming spikes.
+            </p>
+        </div>
 
-CI/CD pipeline created with Jenkins.
+        <div class="card">
+            <h4>⚙ Infrastructure as Code</h4>
+            <p>
+                Used Terraform to automate provisioning of VPC,
+                subnets, container registry, and monitoring stack.
+                Version-controlled infrastructure in GitHub.
+            </p>
+        </div>
 
-Docker used to containerize backend services.
+        <div class="card">
+            <h4>🔁 GitHub Actions Automation</h4>
+            <p>
+                Implemented GitHub Actions workflows for automated
+                code testing, container build, and Kubernetes deployment
+                with environment-based promotion strategy.
+            </p>
+        </div>
 
-Kubernetes cluster used for auto scaling and container orchestration.
+        <div class="card">
+            <h4>📈 Observability Stack</h4>
+            <p>
+                Deployed Prometheus and Grafana via Helm charts.
+                Configured real-time dashboards for streaming latency,
+                error rates, and container resource usage.
+            </p>
+        </div>
 
-SonarQube integrated in pipeline for code quality scanning.
+    </div>
 
-Prometheus and Grafana used for real-time monitoring and alerting.
+    <a href="../index.html" class="download-btn">⬅ Back to Portfolio</a>
 
-Features:
-
-High availability microservices architecture
-
-Auto scaling Kubernetes deployments
-
-Streaming analytics dashboard
-
-Real-time monitoring
-
-Load balancing and service discovery
-
-</p>
-
-</section>
+</div>
 
 </body>
-
 </html>

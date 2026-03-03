@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>ScreenPlay+ OTT Platform</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <title>ScreenPlay+ | DevOps Project</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-<section class="projects">
+<div class="hero">
 
-<h1>ScreenPlay+ – OTT Streaming Platform</h1>
+    <h1 class="name">ScreenPlay+</h1>
 
-<p>
+    <h2 class="role">Enterprise OTT Streaming Platform</h2>
 
-ScreenPlay+ is a Netflix-style OTT streaming platform designed using a scalable cloud-native architecture.
+    <p class="experience">
+        Designed and implemented a scalable OTT streaming platform 
+        deployed on Kubernetes cluster with auto-scaling enabled.
+    </p>
 
-DevOps Architecture:
+    <div class="projects" style="margin-top:50px;">
 
-CI/CD pipeline implemented using Jenkins.
+        <div class="card">
+            <h4>🚀 Infrastructure</h4>
+            <p>
+                Provisioned cloud-ready infrastructure using Terraform.
+                Implemented modular Terraform architecture with reusable modules
+                for networking, load balancers, and Kubernetes cluster setup.
+            </p>
+        </div>
 
-Docker containers used for application packaging.
+        <div class="card">
+            <h4>🔄 CI/CD Pipeline</h4>
+            <p>
+                Built end-to-end CI/CD using Jenkins pipelines.
+                Automated Docker image builds, vulnerability scans,
+                image push to registry, and Kubernetes rolling deployments.
+            </p>
+        </div>
 
-Kubernetes used for container orchestration and scaling.
+        <div class="card">
+            <h4>📦 Containerization</h4>
+            <p>
+                Dockerized video processing microservices.
+                Implemented multi-stage builds for optimized image size
+                and secure container runtime configurations.
+            </p>
+        </div>
 
-Terraform used to provision infrastructure.
+        <div class="card">
+            <h4>📊 Monitoring & Observability</h4>
+            <p>
+                Integrated Prometheus for metrics collection and
+                Grafana dashboards for real-time streaming analytics.
+                Implemented alerting rules for CPU, memory, and pod health.
+            </p>
+        </div>
 
-SonarQube used for automated code quality analysis.
+    </div>
 
-Prometheus and Grafana used for monitoring and alerting.
+    <a href="../index.html" class="download-btn">⬅ Back to Portfolio</a>
 
-Features:
-
-Video upload and streaming system
-
-Content management system
-
-User authentication
-
-Watchlist feature
-
-Subscription management
-
-Monitoring dashboards for platform performance
-
-</p>
-
-</section>
+</div>
 
 </body>
-
 </html>
