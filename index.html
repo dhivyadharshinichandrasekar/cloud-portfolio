@@ -1,86 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dhivyadharshini | DevOps Engineer</title>
-<link rel="stylesheet" href="css/style.css">
-<script defer src="js/main.js"></script>
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Dhivyadharshini | DevOps Engineer</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+
+
 <body>
 
-<!-- Animated Background -->
-<div class="background"></div>
+<!-- Video Background -->
 
-<header>
-  <h1 class="logo">Dhivyadharshini Chandrasekar</h1>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="resume/Dhivyadharshini_CV.pdf" download class="resume-btn">Download CV</a>
-  </nav>
-</header>
+<video autoplay muted loop id="bg-video">
+<source src="assets/bg.mp4" type="video/mp4">
+</video>
+
+
+<div class="overlay"></div>
+
+
+
+<!-- Hero Section -->
 
 <section class="hero">
-  <h2 class="glow-text">DevOps Engineer | Cloud Native | Kubernetes | Terraform</h2>
-  <p>Building Production-Grade Cloud Platforms with Automation & CI/CD</p>
+
+<h1 class="name">DHIVYADHARSHINI</h1>
+
+<h2 class="role">DevOps Engineer</h2>
+
+
+<div class="tools">
+
+JENKINS |
+DOCKER |
+KUBERNETES |
+TERRAFORM |
+SONARQUBE |
+PROMETHEUS |
+GRAFANA |
+GITHUB ACTIONS
+
+</div>
+
+
+<div class="experience">
+4.5 Years Experience in DevOps & Cloud Infrastructure
+</div>
+
+
+<!-- Social Icons -->
+
+<div class="social">
+
+<a href="https://github.com/dhivyadharshinichandrasekar" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="mailto:dhivyadharshinic11@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="tel:+916384451811">
+<i class="fas fa-phone"></i>
+</a>
+
+</div>
+
+
+
+<a class="resume-btn" href="resume/Dhivyadharshini_CV.pdf" download>
+Download Resume
+</a>
+
+
 </section>
 
-<section id="projects" class="projects-section">
-  <h2>Production Projects</h2>
 
-  <div class="project-card" onclick="openProject('SmartBuy')">
-    <h3>SmartBuy</h3>
-    <p>Cloud-native Microservices E-commerce Platform</p>
-  </div>
 
-  <div class="project-card" onclick="openProject('ScreenPlay+')">
-    <h3>ScreenPlay+</h3>
-    <p>OTT Streaming Platform with CI/CD & Kubernetes</p>
-  </div>
+<!-- Projects Section -->
 
-  <div class="project-card" onclick="openProject('DreamStream')">
-    <h3>DreamStream</h3>
-    <p>Multi-Region Cloud Streaming Platform</p>
-  </div>
+<section class="projects">
 
-  <div class="project-card" onclick="openProject('FairyTale')">
-    <h3>FairyTale</h3>
-    <p>Family OTT Platform with Recommendation Engine</p>
-  </div>
+<h2 class="project-title">Production DevOps Projects</h2>
 
-</section>
 
-<section id="contact" class="contact-section">
-  <h2>Contact</h2>
+<div class="project-grid">
 
-  <div class="contact-icons">
-    <a href="https://github.com/dhivyadharshinichandrasekar" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
+<div class="card" onclick="openProject('smartbuy')">
+<h3>SmartBuy</h3>
+<p>Microservices E-commerce platform with CI/CD, containerization, Kubernetes deployment and monitoring.</p>
+</div>
 
-    <a href="mailto:dhivyadharshinic11@gmail.com">
-      <i class="fas fa-envelope"></i>
-    </a>
+<div class="card" onclick="openProject('screenplay')">
+<h3>ScreenPlay+</h3>
+<p>OTT streaming platform with video pipeline, Kubernetes scaling and DevOps automation.</p>
+</div>
 
-    <a href="https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/" target="_blank">
-      <i class="fab fa-linkedin"></i>
-    </a>
+<div class="card" onclick="openProject('dreamstream')">
+<h3>DreamStream</h3>
+<p>Global live streaming platform with monitoring, Terraform infrastructure and CI/CD pipelines.</p>
+</div>
 
-    <a href="tel:+916384451811">
-      <i class="fas fa-phone"></i>
-    </a>
-  </div>
+<div class="card" onclick="openProject('fairytale')">
+<h3>FairyTale</h3>
+<p>Family entertainment OTT platform with containerized services and DevOps observability stack.</p>
+</div>
+
+</div>
 
 </section>
 
-<footer>
-  <p>© 2026 Dhivyadharshini Chandrasekar | DevOps Engineer</p>
-</footer>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
