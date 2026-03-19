@@ -5,67 +5,35 @@
 <title>DevOps Portfolio</title>
 
 <link rel="stylesheet" href="css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/4b8b2c6b9a.js"></script>
-</head>
-<!-- NAVBAR -->
-<nav class="navbar">
-  <h2>Portfolio</h2>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
-<!-- HOME -->
-<section id="home" class="section">
+</head>
+<body>
+
+<!-- CV BUTTON -->
+<a href="resume/Dhivyadharshini_CV.pdf" class="cv-btn">DOWNLOAD CV</a>
+
+<!-- MAIN -->
+<div class="main">
 
 <h1 class="name">DHIVYADHARSHINI CHANDRASEKAR</h1>
-<h2 class="role">DevOps Engineer</h2>
 
-<p class="tools">
+<h2 class="role">DEVOPS ENGINEER</h2>
+
+<div class="tools">
 JENKINS | DOCKER | KUBERNETES | TERRAFORM |
 SONARQUBE | PROMETHEUS | GRAFANA
-</p>
+</div>
 
-<a href="resume/Dhivyadharshini_CV.pdf" class="btn">Download CV</a>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-
-<h2 class="title">DevOps Projects</h2>
+<p class="exp">5+ YEARS EXPERIENCE IN DEVOPS</p>
 
 <div class="projects">
-
-<div class="card" onclick="openProject('smartbuy')">
-  <h3>SmartBuy</h3>
+<span onclick="openProject('smartbuy')">SMARTBUY</span>
+<span onclick="openProject('screenplay')">SCREENPLAY+</span>
+<span onclick="openProject('dreamstream')">DREAMSTREAM</span>
+<span onclick="openProject('fairytale')">FAIRYTALE</span>
 </div>
-
-<div class="card" onclick="openProject('screenplay')">
-  <h3>ScreenPlay+</h3>
-</div>
-
-<div class="card" onclick="openProject('dreamstream')">
-  <h3>DreamStream</h3>
-</div>
-
-<div class="card" onclick="openProject('fairytale')">
-  <h3>FairyTale</h3>
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-
-<h2>Contact</h2>
 
 <div class="icons">
 <a href="https://github.com/dhivyadharshinichandrasekar"><i class="fab fa-github"></i></a>
@@ -74,4 +42,9 @@ SONARQUBE | PROMETHEUS | GRAFANA
 <a href="tel:+916384451811"><i class="fas fa-phone"></i></a>
 </div>
 
-</section>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

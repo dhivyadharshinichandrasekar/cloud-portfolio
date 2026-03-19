@@ -2,125 +2,123 @@ body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   color: white;
-  background: black;
+
+  /* 8K BACKGROUND IMAGE */
+  background: url('../assets/neon-bg.png') no-repeat center center/cover;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* CENTER PERFECT */
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  width: 90%;
 }
 
-/* VIDEO */
-#bg-video {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-/* OVERLAY */
-.overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,20,0.8);
-  z-index: -1;
-}
-
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-}
-
-.navbar li {
-  margin-left: 20px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-/* SECTION */
-.section {
-  min-height: 100vh;
-  padding-top: 100px;
-}
-
-/* TEXT */
+/* NAME (BIG + SHARP) */
 .name {
-  font-size: 50px;
-  margin-top: 50px;
-  background: linear-gradient(90deg, cyan, magenta);
-  -webkit-background-clip: text;
-  color: transparent;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  color: #00eaff;
+  text-shadow: 0 0 5px #00eaff;
 }
 
+/* ROLE */
 .role {
-  font-size: 25px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
+/* TOOLS (EXACT STYLE LIKE IMAGE) */
 .tools {
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+/* EACH TOOL SAME STYLE */
+.tools span {
+  color: #00eaff;
+  text-shadow: 0 0 4px #00eaff;
+}
+
+/* EXPERIENCE */
+.exp {
   font-size: 14px;
+  margin-bottom: 30px;
+  color: #ccc;
 }
 
-/* BUTTON */
-.btn {
-  border: 2px solid cyan;
+/* CV BUTTON TOP RIGHT */
+.cv-btn {
+  position: fixed;
+  top: 25px;
+  right: 40px;
   padding: 10px 25px;
+
+  border: 1px solid #00eaff;
   border-radius: 25px;
-  color: cyan;
+
+  color: #00eaff;
   text-decoration: none;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  transition: 0.3s;
 }
 
-/* PROJECTS */
+.cv-btn:hover {
+  background: #00eaff;
+  color: black;
+}
+
+/* PROJECT BUTTONS */
 .projects {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-/* CARD */
 .card {
-  width: 250px;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  border: 2px solid rgba(0,255,255,0.3);
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 18px;
+
+  border: 1px solid #00eaff;
+  border-radius: 8px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* HOVER */
 .card:hover {
-  box-shadow: 0 0 20px cyan, 0 0 40px magenta;
-  transform: scale(1.05);
+  background: #00eaff;
+  color: black;
 }
 
 /* ICONS */
+.icons {
+  margin-top: 25px;
+}
+
 .icons i {
-  font-size: 25px;
   margin: 10px;
+  font-size: 20px;
+  color: #aaa;
+  transition: 0.3s;
 }
 
-/* SCROLL ANIMATION */
-.hidden {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 1s;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
+.icons i:hover {
+  color: #00eaff;
 }
