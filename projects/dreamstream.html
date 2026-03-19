@@ -1,0 +1,501 @@
+cat > projects/dreamstream/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamStream - Cloud-Native Streaming | Dhivyadharshini</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css)">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+    <style>
+        :root {
+            --project-color: #7b2dff;
+            --project-glow: 0 0 20px rgba(123, 45, 255, 0.5);
+        }
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(123, 45, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+        }
+        .project-hero-content { max-width: 900px; }
+        .project-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(123, 45, 255, 0.1);
+            border: 1px solid var(--project-color);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--project-color);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .project-hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #7b2dff, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--project-color);
+            color: var(--project-color);
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-btn:hover {
+            background: var(--project-color);
+            color: var(--dark-bg);
+        }
+        .architecture-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .multi-region-diagram {
+            background: var(--card-bg);
+            border: 1px solid rgba(123, 45, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+        .region-card {
+            background: rgba(123, 45, 255, 0.05);
+            border: 1px solid rgba(123, 45, 255, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .region-card:hover {
+            border-color: var(--project-color);
+            box-shadow: var(--project-glow);
+            transform: translateY(-5px);
+        }
+        .region-card h4 {
+            color: var(--project-color);
+            font-family: 'Orbitron', monospace;
+            margin-bottom: 1rem;
+        }
+        .region-card .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .region-card .service-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(123, 45, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(123, 45, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--project-color);
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: var(--project-color);
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(123, 45, 255, 0.05);
+            border: 1px solid rgba(123, 45, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .tech-badge:hover {
+            border-color: var(--project-color);
+            box-shadow: var(--project-glow);
+        }
+        .tech-badge i {
+            font-size: 1.2rem;
+            color: var(--project-color);
+        }
+        .tech-badge img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        .tech-badge span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(123, 45, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .code-block .comment { color: #6a9955; }
+        .code-block .keyword { color: #7b2dff; }
+        .code-block .string { color: #ce9178; }
+        .gitops-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(123, 45, 255, 0.2);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        .gitops-step {
+            padding: 1.5rem 2rem;
+            background: rgba(123, 45, 255, 0.05);
+            border: 1px solid rgba(123, 45, 255, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            min-width: 140px;
+            transition: all 0.3s ease;
+        }
+        .gitops-step:hover {
+            border-color: var(--project-color);
+            box-shadow: var(--project-glow);
+        }
+        .gitops-step i {
+            font-size: 2rem;
+            color: var(--project-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .gitops-step img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .gitops-step span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .gitops-arrow {
+            color: var(--project-color);
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-particles" id="particles"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">&lt;DD/&gt;</span>
+        </div>
+        <a href="../../index.html" class="cv-btn" style="border-color: var(--project-color); color: var(--project-color);">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <a href="../../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> All Projects
+            </a>
+            <div class="project-badge">Cloud-Native Platform</div>
+            <h1>DreamStream</h1>
+            <p>Multi-region cloud-native live streaming platform with GitOps workflow, disaster recovery, and comprehensive infrastructure automation using Terraform and ArgoCD.</p>
+            <div class="tech-used">
+                <div class="tech-badge">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                    <span>Kubernetes</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg)" alt="Terraform">
+                    <span>Terraform</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg)" alt="ArgoCD">
+                    <span>ArgoCD</span>
+                </div>
+                <div class="tech-badge">
+                    <i class="fab fa-jenkins"></i>
+                    <span>Jenkins</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--project-color);">&lt;</span>
+                Multi-Region Architecture
+                <span class="title-decoration" style="color: var(--project-color);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #7b2dff, #00f0ff);"></div>
+        </div>
+
+        <div class="multi-region-diagram">
+            <div class="region-grid">
+                <div class="region-card">
+                    <h4><i class="fas fa-globe-americas"></i> US-East (Primary)</h4>
+                    <div class="services">
+                        <span class="service-tag">EKS Cluster</span>
+                        <span class="service-tag">RDS Primary</span>
+                        <span class="service-tag">ElastiCache</span>
+                        <span class="service-tag">S3</span>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <h4><i class="fas fa-globe-europe"></i> EU-West (Secondary)</h4>
+                    <div class="services">
+                        <span class="service-tag">EKS Cluster</span>
+                        <span class="service-tag">RDS Replica</span>
+                        <span class="service-tag">ElastiCache</span>
+                        <span class="service-tag">S3 Replica</span>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <h4><i class="fas fa-globe-asia"></i> AP-South (Edge)</h4>
+                    <div class="services">
+                        <span class="service-tag">EKS Cluster</span>
+                        <span class="service-tag">Read Replica</span>
+                        <span class="service-tag">CloudFront</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--project-color);">&lt;</span>
+                GitOps Workflow
+                <span class="title-decoration" style="color: var(--project-color);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #7b2dff, #00f0ff);"></div>
+        </div>
+
+        <div class="gitops-flow">
+            <div class="gitops-step">
+                <i class="fab fa-github"></i>
+                <span>Git Push</span>
+            </div>
+            <i class="fas fa-arrow-right gitops-arrow"></i>
+            <div class="gitops-step">
+                <i class="fab fa-jenkins"></i>
+                <span>CI Pipeline</span>
+            </div>
+            <i class="fas fa-arrow-right gitops-arrow"></i>
+            <div class="gitops-step">
+                <i class="fab fa-docker"></i>
+                <span>Build Image</span>
+            </div>
+            <i class="fas fa-arrow-right gitops-arrow"></i>
+            <div class="gitops-step">
+                <i class="fas fa-code-branch"></i>
+                <span>Update Manifests</span>
+            </div>
+            <i class="fas fa-arrow-right gitops-arrow"></i>
+            <div class="gitops-step">
+                <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg)" alt="ArgoCD">
+                <span>ArgoCD Sync</span>
+            </div>
+            <i class="fas fa-arrow-right gitops-arrow"></i>
+            <div class="gitops-step">
+                <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                <span>Deploy</span>
+            </div>
+        </div>
+
+        <div class="code-block">
+            <pre><span class="comment"># terraform/main.tf - DreamStream Multi-Region Infrastructure</span>
+
+<span class="keyword">module</span> <span class="string">"vpc_primary"</span> {
+  source  = <span class="string">"./modules/vpc"</span>
+  
+  region              = <span class="string">"us-east-1"</span>
+  vpc_cidr            = <span class="string">"10.0.0.0/16"</span>
+  availability_zones  = [<span class="string">"us-east-1a"</span>, <span class="string">"us-east-1b"</span>, <span class="string">"us-east-1c"</span>]
+  enable_nat_gateway  = true
+  single_nat_gateway  = false
+  
+  tags = {
+    Environment = <span class="string">"production"</span>
+    Project     = <span class="string">"dreamstream"</span>
+    Region      = <span class="string">"primary"</span>
+  }
+}
+
+<span class="keyword">module</span> <span class="string">"eks_cluster"</span> {
+  source  = <span class="string">"./modules/eks"</span>
+  
+  cluster_name    = <span class="string">"dreamstream-primary"</span>
+  cluster_version = <span class="string">"1.28"</span>
+  vpc_id          = module.vpc_primary.vpc_id
+  subnet_ids      = module.vpc_primary.private_subnet_ids
+  
+  node_groups = {
+    streaming = {
+      instance_types = [<span class="string">"c5.2xlarge"</span>]
+      min_size       = 3
+      max_size       = 20
+      desired_size   = 5
+    }
+    general = {
+      instance_types = [<span class="string">"m5.xlarge"</span>]
+      min_size       = 2
+      max_size       = 10
+      desired_size   = 3
+    }
+  }
+}
+
+<span class="keyword">module</span> <span class="string">"rds_primary"</span> {
+  source  = <span class="string">"./modules/rds"</span>
+  
+  identifier        = <span class="string">"dreamstream-db"</span>
+  engine            = <span class="string">"aurora-postgresql"</span>
+  engine_version    = <span class="string">"15.3"</span>
+  instance_class    = <span class="string">"db.r6g.xlarge"</span>
+  
+  multi_az                    = true
+  backup_retention_period     = 7
+  enable_cross_region_replica = true
+  replica_region              = <span class="string">"eu-west-1"</span>
+}</pre>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--project-color);">&lt;</span>
+                Key Features
+                <span class="title-decoration" style="color: var(--project-color);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #7b2dff, #00f0ff);"></div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-globe"></i> Multi-Region Deployment</h3>
+                <p>Active-active deployment across 3 AWS regions with Route 53 geolocation routing and automatic failover capabilities.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-sync-alt"></i> GitOps with ArgoCD</h3>
+                <p>Declarative GitOps workflow with ArgoCD for automated, auditable, and reversible deployments across all clusters.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt"></i> Disaster Recovery</h3>
+                <p>RPO &lt; 1 minute with cross-region database replication and RTO &lt; 15 minutes with automated failover procedures.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-code"></i> Infrastructure as Code</h3>
+                <p>100% Terraform-managed infrastructure with modular design, state management in S3, and automated drift detection.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-lock"></i> Security First</h3>
+                <p>AWS WAF integration, VPC isolation, secrets management with AWS Secrets Manager, and pod security policies.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-chart-bar"></i> Cost Optimization</h3>
+                <p>Spot instances for non-critical workloads, reserved capacity for base load, and automated resource right-sizing.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">&lt;DD/&gt;</span>
+            </div>
+            <div class="social-links">
+                <a href="[github.com](https://github.com/dhivyadharshinichandrasekar)" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="[linkedin.com](https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/)" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:dhivyadharshinic11@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Dhivyadharshini. Crafted with <i class="fas fa-heart"></i> & DevOps</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
+EOF

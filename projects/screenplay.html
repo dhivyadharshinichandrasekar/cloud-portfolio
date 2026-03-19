@@ -1,0 +1,458 @@
+cat > projects/screenplay-plus/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenPlay+ - OTT Platform | Dhivyadharshini</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css)">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+        }
+        .project-hero-content { max-width: 900px; }
+        .project-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid var(--secondary);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .project-hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff00ff, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-btn:hover {
+            background: var(--secondary);
+            color: var(--dark-bg);
+        }
+        .architecture-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .architecture-diagram {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .arch-box {
+            padding: 1.5rem 2rem;
+            background: rgba(255, 0, 255, 0.05);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            min-width: 140px;
+            transition: all 0.3s ease;
+        }
+        .arch-box:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        .arch-box i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .arch-box img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .arch-box span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .arch-arrow {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            animation: arrowPulse 1.5s infinite;
+        }
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 1; transform: translateX(0); }
+            50% { opacity: 0.5; transform: translateX(5px); }
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 0, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: var(--secondary);
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 0, 255, 0.05);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .tech-badge:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+        .tech-badge i {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        .tech-badge img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        .tech-badge span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .code-block .comment { color: #6a9955; }
+        .code-block .keyword { color: #c586c0; }
+        .code-block .string { color: #ce9178; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+        }
+        .metric-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-particles" id="particles"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">&lt;DD/&gt;</span>
+        </div>
+        <a href="../../index.html" class="cv-btn" style="border-color: var(--secondary); color: var(--secondary);">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <a href="../../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> All Projects
+            </a>
+            <div class="project-badge">OTT Streaming Platform</div>
+            <h1>ScreenPlay+</h1>
+            <p>Netflix-style OTT streaming platform with adaptive bitrate streaming, CDN integration, real-time analytics, and a comprehensive DevOps monitoring stack.</p>
+            <div class="tech-used">
+                <div class="tech-badge">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg)" alt="Prometheus">
+                    <span>Prometheus</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg)" alt="Grafana">
+                    <span>Grafana</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg)" alt="SonarQube">
+                    <span>SonarQube</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[helm.sh](https://helm.sh/img/helm.svg)" alt="Helm" style="filter: brightness(0) invert(1);">
+                    <span>Helm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--secondary);">&lt;</span>
+                Streaming Architecture
+                <span class="title-decoration" style="color: var(--secondary);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #ff00ff, #00f0ff);"></div>
+        </div>
+
+        <div class="architecture-diagram">
+            <div class="arch-flow">
+                <div class="arch-box">
+                    <i class="fas fa-video"></i>
+                    <span>Video Ingest</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fas fa-cogs"></i>
+                    <span>Transcoding</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fas fa-database"></i>
+                    <span>S3 Storage</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fas fa-globe"></i>
+                    <span>CloudFront CDN</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fas fa-tv"></i>
+                    <span>HLS Player</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">99.9%</div>
+                <div class="metric-label">Uptime SLA</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">&lt;2s</div>
+                <div class="metric-label">Stream Start Time</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">4K</div>
+                <div class="metric-label">Max Resolution</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">50+</div>
+                <div class="metric-label">Global Edge Locations</div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--secondary);">&lt;</span>
+                Monitoring Dashboard
+                <span class="title-decoration" style="color: var(--secondary);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #ff00ff, #00f0ff);"></div>
+        </div>
+
+        <div class="code-block">
+            <pre><span class="comment"># prometheus-config.yaml - ScreenPlay+ Monitoring</span>
+<span class="keyword">global:</span>
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+<span class="keyword">alerting:</span>
+  alertmanagers:
+    - static_configs:
+        - targets: [<span class="string">'alertmanager:9093'</span>]
+
+<span class="keyword">rule_files:</span>
+  - <span class="string">'streaming_alerts.yml'</span>
+  - <span class="string">'infrastructure_alerts.yml'</span>
+
+<span class="keyword">scrape_configs:</span>
+  - job_name: <span class="string">'streaming-service'</span>
+    kubernetes_sd_configs:
+      - role: pod
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        regex: screenplay-streaming
+        action: keep
+
+  - job_name: <span class="string">'cdn-metrics'</span>
+    static_configs:
+      - targets: [<span class="string">'cdn-exporter:9100'</span>]
+    metrics_path: /metrics
+
+  - job_name: <span class="string">'transcoding-workers'</span>
+    kubernetes_sd_configs:
+      - role: pod
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_label_component]
+        regex: transcoder
+        action: keep</pre>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration" style="color: var(--secondary);">&lt;</span>
+                Key Features
+                <span class="title-decoration" style="color: var(--secondary);">/&gt;</span>
+            </h2>
+            <div class="title-line" style="background: linear-gradient(135deg, #ff00ff, #00f0ff);"></div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-stream"></i> Adaptive Bitrate Streaming</h3>
+                <p>Implemented HLS/DASH streaming with automatic quality adjustment based on network conditions, supporting resolutions from 360p to 4K.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-tachometer-alt"></i> Real-Time Analytics</h3>
+                <p>Custom Grafana dashboards tracking concurrent viewers, buffer ratio, error rates, and content popularity metrics in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-server"></i> Distributed Transcoding</h3>
+                <p>Kubernetes-based transcoding pipeline with auto-scaling workers, processing 100+ hours of content daily with parallel encoding.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt"></i> DRM Protection</h3>
+                <p>Integrated Widevine and FairPlay DRM for content protection, with secure key delivery and license management.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-network-wired"></i> CDN Optimization</h3>
+                <p>CloudFront CDN with custom origin policies, cache invalidation automation, and edge location optimization for global delivery.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-bell"></i> Alerting System</h3>
+                <p>Prometheus AlertManager with PagerDuty integration for streaming quality degradation, high error rates, and infrastructure issues.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">&lt;DD/&gt;</span>
+            </div>
+            <div class="social-links">
+                <a href="[github.com](https://github.com/dhivyadharshinichandrasekar)" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="[linkedin.com](https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/)" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:dhivyadharshinic11@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Dhivyadharshini. Crafted with <i class="fas fa-heart"></i> & DevOps</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
+EOF

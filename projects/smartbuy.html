@@ -1,20 +1,475 @@
+cat > projects/smartbuy/index.html << 'EOF'
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SmartBuy</title>
-<link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBuy - E-Commerce Microservices | Dhivyadharshini</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css)">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(123, 45, 255, 0.1) 0%, transparent 50%);
+        }
+        .project-hero-content { max-width: 900px; }
+        .project-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .project-hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-btn:hover {
+            background: var(--primary);
+            color: var(--dark-bg);
+        }
+        .architecture-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .architecture-diagram {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .arch-box {
+            padding: 1.5rem 2rem;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            min-width: 140px;
+            transition: all 0.3s ease;
+        }
+        .arch-box:hover {
+            border-color: var(--primary);
+            box-shadow: var(--glow-primary);
+            transform: translateY(-5px);
+        }
+        .arch-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .arch-box img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .arch-box:hover img {
+            filter: drop-shadow(0 0 10px var(--primary)) brightness(1);
+        }
+        .arch-box span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .arch-arrow {
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: arrowPulse 1.5s infinite;
+        }
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 1; transform: translateX(0); }
+            50% { opacity: 0.5; transform: translateX(5px); }
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: var(--primary);
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .tech-badge:hover {
+            border-color: var(--primary);
+            box-shadow: var(--glow-primary);
+        }
+        .tech-badge i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        .tech-badge img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        .tech-badge span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .code-block .comment { color: #6a9955; }
+        .code-block .keyword { color: #569cd6; }
+        .code-block .string { color: #ce9178; }
+        .code-block .function { color: #dcdcaa; }
+        .pipeline-stages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .stage {
+            padding: 1rem 1.5rem;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .stage::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .stage:last-child::after { display: none; }
+        .stage:hover {
+            background: rgba(0, 240, 255, 0.1);
+            border-color: var(--primary);
+        }
+        .stage span {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-particles" id="particles"></div>
+    </div>
 
-<h1>SmartBuy - DevOps Project</h1>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">&lt;DD/&gt;</span>
+        </div>
+        <a href="../../index.html" class="cv-btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
 
-<p>
-E-commerce platform deployed using:
-Docker, Kubernetes, Jenkins CI/CD, Terraform
-</p>
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <a href="../../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> All Projects
+            </a>
+            <div class="project-badge">E-Commerce Platform</div>
+            <h1>SmartBuy</h1>
+            <p>Production-grade e-commerce microservices platform with automated CI/CD, container orchestration, and comprehensive monitoring using modern DevOps practices.</p>
+            <div class="tech-used">
+                <div class="tech-badge">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                    <span>Kubernetes</span>
+                </div>
+                <div class="tech-badge">
+                    <i class="fab fa-jenkins"></i>
+                    <span>Jenkins</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg)" alt="Terraform">
+                    <span>Terraform</span>
+                </div>
+                <div class="tech-badge">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-badge">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg)" alt="Prometheus">
+                    <span>Prometheus</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="../index.html">⬅ Back</a>
+    <section class="architecture-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                Architecture Overview
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
 
+        <div class="architecture-diagram">
+            <div class="arch-flow">
+                <div class="arch-box">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fab fa-jenkins"></i>
+                    <span>Jenkins</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg)" alt="SonarQube">
+                    <span>SonarQube</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                    <span>Kubernetes</span>
+                </div>
+                <i class="fas fa-arrow-right arch-arrow"></i>
+                <div class="arch-box">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg)" alt="Grafana">
+                    <span>Monitoring</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                CI/CD Pipeline
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="pipeline-stages">
+            <div class="stage"><span>Git Clone</span></div>
+            <div class="stage"><span>Build</span></div>
+            <div class="stage"><span>Unit Tests</span></div>
+            <div class="stage"><span>SonarQube Scan</span></div>
+            <div class="stage"><span>Docker Build</span></div>
+            <div class="stage"><span>Trivy Scan</span></div>
+            <div class="stage"><span>Push to ECR</span></div>
+            <div class="stage"><span>Deploy to K8s</span></div>
+        </div>
+
+        <div class="code-block">
+            <pre><span class="comment">// Jenkinsfile - SmartBuy CI/CD Pipeline</span>
+pipeline {
+    agent any
+    
+    environment {
+        AWS_REGION = <span class="string">'ap-south-1'</span>
+        ECR_REPO = <span class="string">'smartbuy-app'</span>
+        K8S_NAMESPACE = <span class="string">'production'</span>
+    }
+    
+    stages {
+        stage(<span class="string">'Checkout'</span>) {
+            steps {
+                git branch: <span class="string">'main'</span>, 
+                    url: <span class="string">'[github.com](https://github.com/dhivyadharshinichandrasekar/smartbuy.git)'</span>
+            }
+        }
+        
+        stage(<span class="string">'SonarQube Analysis'</span>) {
+            steps {
+                withSonarQubeEnv(<span class="string">'sonarqube'</span>) {
+                    sh <span class="string">'sonar-scanner'</span>
+                }
+            }
+        }
+        
+        stage(<span class="string">'Docker Build & Push'</span>) {
+            steps {
+                sh <span class="string">'docker build -t $ECR_REPO:$BUILD_NUMBER .'</span>
+                sh <span class="string">'aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_URL'</span>
+                sh <span class="string">'docker push $ECR_URL/$ECR_REPO:$BUILD_NUMBER'</span>
+            }
+        }
+        
+        stage(<span class="string">'Deploy to Kubernetes'</span>) {
+            steps {
+                sh <span class="string">'kubectl apply -f k8s/ -n $K8S_NAMESPACE'</span>
+                sh <span class="string">'kubectl set image deployment/smartbuy smartbuy=$ECR_URL/$ECR_REPO:$BUILD_NUMBER -n $K8S_NAMESPACE'</span>
+            }
+        }
+    }
+}</pre>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                Key Features
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-cubes"></i> Microservices Architecture</h3>
+                <p>Decomposed monolithic e-commerce into 8 microservices: User Service, Product Catalog, Cart, Order, Payment, Inventory, Notification, and Search services.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-sync-alt"></i> Auto-Scaling</h3>
+                <p>Implemented Horizontal Pod Autoscaler (HPA) with custom metrics, scaling based on CPU utilization and request rate for handling traffic spikes.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-exchange-alt"></i> Blue-Green Deployment</h3>
+                <p>Zero-downtime deployments using blue-green strategy with automatic rollback capabilities on health check failures.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt"></i> Security Scanning</h3>
+                <p>Integrated Trivy for container vulnerability scanning and SonarQube for static code analysis in the CI/CD pipeline.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-chart-line"></i> Observability Stack</h3>
+                <p>Full observability with Prometheus for metrics, Grafana dashboards, and ELK stack for centralized logging.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-code-branch"></i> Infrastructure as Code</h3>
+                <p>Complete AWS infrastructure provisioned using Terraform modules including VPC, EKS cluster, RDS, and ElastiCache.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">&lt;DD/&gt;</span>
+            </div>
+            <div class="social-links">
+                <a href="[github.com](https://github.com/dhivyadharshinichandrasekar)" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="[linkedin.com](https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/)" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:dhivyadharshinic11@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Dhivyadharshini. Crafted with <i class="fas fa-heart"></i> & DevOps</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
 </body>
 </html>
+EOF

@@ -1,50 +1,504 @@
+cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>DevOps Portfolio</title>
-
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/4b8b2c6b9a.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhivyadharshini | DevOps Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css)">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-particles" id="particles"></div>
+        <div class="cyber-circles"></div>
+    </div>
 
-<!-- CV BUTTON -->
-<a href="resume/Dhivyadharshini_CV.pdf" class="cv-btn">DOWNLOAD CV</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">&lt;DD/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <a href="resume/Dhivyadharshini_CV.pdf" download class="cv-btn">
+            <i class="fas fa-download"></i> Download CV
+        </a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
-<!-- MAIN -->
-<div class="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="glitch-container">
+                <h1 class="glitch" data-text="DHIVYADHARSHINI">DHIVYADHARSHINI</h1>
+            </div>
+            <div class="title-container">
+                <h2 class="cyber-title">
+                    <span class="title-bracket">[</span>
+                    <span class="title-text">DevOps Engineer</span>
+                    <span class="title-bracket">]</span>
+                </h2>
+            </div>
+            <div class="experience-badge">
+                <div class="exp-number">4.5+</div>
+                <div class="exp-text">Years Experience</div>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-item" data-tooltip="Jenkins">
+                    <i class="fab fa-jenkins"></i>
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="Docker">
+                    <i class="fab fa-docker"></i>
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="Kubernetes">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="Terraform">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg)" alt="Terraform">
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="AWS">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="Prometheus">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg)" alt="Prometheus">
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="Grafana">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg)" alt="Grafana">
+                </div>
+                <span class="separator">|</span>
+                <div class="tech-item" data-tooltip="SonarQube">
+                    <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg)" alt="SonarQube">
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="cta-btn primary">
+                    <span>View Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="cta-btn secondary">
+                    <span>Contact Me</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
 
-<h1 class="name">DHIVYADHARSHINI CHANDRASEKAR</h1>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                About Me
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-card">
+                <div class="card-glow"></div>
+                <div class="about-text">
+                    <p class="intro-text">
+                        <span class="highlight">Passionate DevOps Engineer</span> with 4.5+ years of experience in designing, implementing, and managing CI/CD pipelines, cloud infrastructure, and container orchestration systems.
+                    </p>
+                    <p>
+                        Specialized in automating deployment workflows, infrastructure as code, and building scalable microservices architectures. Expert in transforming complex manual processes into streamlined, automated solutions.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Pipelines Built</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="30">0</div>
+                            <div class="stat-label">Cloud Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="99">0</div>
+                            <div class="stat-label">% Uptime Achieved</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="15">0</div>
+                            <div class="stat-label">Tools Mastered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2 class="role">DEVOPS ENGINEER</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                Tech Arsenal
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 class="category-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                        <div class="skill-level" data-level="90"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg)" alt="Terraform">
+                        <span>Terraform</span>
+                        <div class="skill-level" data-level="85"></div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux</span>
+                        <div class="skill-level" data-level="90"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title"><i class="fas fa-cubes"></i> Containerization & Orchestration</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                        <div class="skill-level" data-level="92"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg)" alt="K8s">
+                        <span>Kubernetes</span>
+                        <div class="skill-level" data-level="88"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[helm.sh](https://helm.sh/img/helm.svg)" alt="Helm">
+                        <span>Helm</span>
+                        <div class="skill-level" data-level="80"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title"><i class="fas fa-cogs"></i> CI/CD & Automation</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-jenkins"></i>
+                        <span>Jenkins</span>
+                        <div class="skill-level" data-level="95"></div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Actions</span>
+                        <div class="skill-level" data-level="85"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg)" alt="ArgoCD">
+                        <span>ArgoCD</span>
+                        <div class="skill-level" data-level="82"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title"><i class="fas fa-chart-line"></i> Monitoring & Quality</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg)" alt="Prometheus">
+                        <span>Prometheus</span>
+                        <div class="skill-level" data-level="88"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg)" alt="Grafana">
+                        <span>Grafana</span>
+                        <div class="skill-level" data-level="90"></div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg)" alt="SonarQube">
+                        <span>SonarQube</span>
+                        <div class="skill-level" data-level="85"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="tools">
-JENKINS | DOCKER | KUBERNETES | TERRAFORM |
-SONARQUBE | PROMETHEUS | GRAFANA
-</div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                Featured Projects
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="projects-grid">
+            <!-- SmartBuy Project -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <a href="projects/smartbuy/index.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="[github.com](https://github.com/dhivyadharshinichandrasekar/cloud-portfolio)" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">SmartBuy</h3>
+                    <p class="project-subtitle">E-Commerce Microservices Platform</p>
+                    <p class="project-description">
+                        Production-grade e-commerce platform with microservices architecture, featuring automated CI/CD pipelines, container orchestration, and real-time monitoring.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-tag"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Terraform</span>
+                    </div>
+                    <div class="project-features">
+                        <div class="feature"><i class="fas fa-check"></i> Auto-scaling Infrastructure</div>
+                        <div class="feature"><i class="fas fa-check"></i> Blue-Green Deployment</div>
+                        <div class="feature"><i class="fas fa-check"></i> 99.9% Uptime SLA</div>
+                    </div>
+                </div>
+                <div class="card-border"></div>
+            </div>
 
-<p class="exp">5+ YEARS EXPERIENCE IN DEVOPS</p>
+            <!-- ScreenPlay+ Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <a href="projects/screenplay-plus/index.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="[github.com](https://github.com/dhivyadharshinichandrasekar/cloud-portfolio)" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">ScreenPlay+</h3>
+                    <p class="project-subtitle">OTT Streaming Platform</p>
+                    <p class="project-description">
+                        Netflix-style streaming platform with adaptive bitrate streaming, content delivery network integration, and comprehensive DevOps pipeline.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-tag">Prometheus</span>
+                        <span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Helm</span>
+                    </div>
+                    <div class="project-features">
+                        <div class="feature"><i class="fas fa-check"></i> HLS/DASH Streaming</div>
+                        <div class="feature"><i class="fas fa-check"></i> CDN Integration</div>
+                        <div class="feature"><i class="fas fa-check"></i> Real-time Analytics</div>
+                    </div>
+                </div>
+                <div class="card-border"></div>
+            </div>
 
-<div class="projects">
-<span onclick="openProject('smartbuy')">SMARTBUY</span>
-<span onclick="openProject('screenplay')">SCREENPLAY+</span>
-<span onclick="openProject('dreamstream')">DREAMSTREAM</span>
-<span onclick="openProject('fairytale')">FAIRYTALE</span>
-</div>
+            <!-- DreamStream Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <a href="projects/dreamstream/index.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="[github.com](https://github.com/dhivyadharshinichandrasekar/cloud-portfolio)" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">DreamStream</h3>
+                    <p class="project-subtitle">Cloud-Native Live Streaming</p>
+                    <p class="project-description">
+                        Multi-region live streaming platform with cloud-native architecture, featuring auto-scaling, disaster recovery, and comprehensive monitoring stack.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">ArgoCD</span>
+                        <span class="tech-tag">Jenkins</span>
+                    </div>
+                    <div class="project-features">
+                        <div class="feature"><i class="fas fa-check"></i> Multi-Region Deploy</div>
+                        <div class="feature"><i class="fas fa-check"></i> GitOps Workflow</div>
+                        <div class="feature"><i class="fas fa-check"></i> Disaster Recovery</div>
+                    </div>
+                </div>
+                <div class="card-border"></div>
+            </div>
 
-<div class="icons">
-<a href="https://github.com/dhivyadharshinichandrasekar"><i class="fab fa-github"></i></a>
-<a href="mailto:dhivyadharshinic11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/"><i class="fab fa-linkedin"></i></a>
-<a href="tel:+916384451811"><i class="fas fa-phone"></i></a>
-</div>
+            <!-- FairyTale Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <a href="projects/fairytale/index.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="[github.com](https://github.com/dhivyadharshinichandrasekar/cloud-portfolio)" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">FairyTale</h3>
+                    <p class="project-subtitle">Kids & Family OTT Platform</p>
+                    <p class="project-description">
+                        Family-friendly streaming platform with secure content delivery, parental controls, and fully automated DevSecOps pipeline with security scanning.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Trivy</span>
+                        <span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">Prometheus</span>
+                    </div>
+                    <div class="project-features">
+                        <div class="feature"><i class="fas fa-check"></i> Security Scanning</div>
+                        <div class="feature"><i class="fas fa-check"></i> OWASP Compliance</div>
+                        <div class="feature"><i class="fas fa-check"></i> Automated Testing</div>
+                    </div>
+                </div>
+                <div class="card-border"></div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-decoration">&lt;</span>
+                Get In Touch
+                <span class="title-decoration">/&gt;</span>
+            </h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p class="contact-intro">Ready to collaborate on your next DevOps project? Let's connect!</p>
+                <div class="contact-cards">
+                    <a href="mailto:dhivyadharshinic11@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>dhivyadharshinic11@gmail.com</p>
+                        </div>
+                        <div class="card-glow"></div>
+                    </a>
+                    <a href="tel:+916384451811" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 6384451811</p>
+                        </div>
+                        <div class="card-glow"></div>
+                    </a>
+                    <a href="[linkedin.com](https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/)" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p>Dhivyadharshini Chandrasekar</p>
+                        </div>
+                        <div class="card-glow"></div>
+                    </a>
+                    <a href="[github.com](https://github.com/dhivyadharshinichandrasekar)" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p>dhivyadharshinichandrasekar</p>
+                        </div>
+                        <div class="card-glow"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="js/main.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">&lt;DD/&gt;</span>
+            </div>
+            <div class="social-links">
+                <a href="[github.com](https://github.com/dhivyadharshinichandrasekar)" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="[linkedin.com](https://www.linkedin.com/in/dhivyadharshini-chandrasekar-8172a93a9/)" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:dhivyadharshinic11@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+916384451811" class="social-link" aria-label="Phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Dhivyadharshini. Crafted with <i class="fas fa-heart"></i> & DevOps</p>
+        </div>
+        <div class="footer-glow"></div>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
+EOF
