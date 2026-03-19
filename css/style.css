@@ -2,10 +2,11 @@ body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   color: white;
-  text-align: center;
   background: black;
+  text-align: center;
 }
 
+/* VIDEO */
 #bg-video {
   position: fixed;
   width: 100%;
@@ -14,54 +15,112 @@ body {
   z-index: -2;
 }
 
+/* OVERLAY */
 .overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,20,0.8);
+  z-index: -1;
 }
 
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SECTION */
+.section {
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+/* TEXT */
 .name {
-  font-size: 45px;
-  margin-top: 40px;
+  font-size: 50px;
+  margin-top: 50px;
   background: linear-gradient(90deg, cyan, magenta);
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.card {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid cyan;
+.role {
+  font-size: 25px;
 }
 
-/* NEON BORDER ANIMATION */
+.tools {
+  font-size: 14px;
+}
+
+/* BUTTON */
+.btn {
+  border: 2px solid cyan;
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: cyan;
+  text-decoration: none;
+}
+
+/* PROJECTS */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CARD */
 .card {
-  position: relative;
-  overflow: hidden;
-  border: 2px solid rgba(0,255,255,0.4);
+  width: 250px;
+  margin: 20px;
+  padding: 20px;
   border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(0,255,255,0.3);
+  backdrop-filter: blur(10px);
   transition: 0.4s;
 }
 
-/* GLOW EFFECT */
+/* HOVER */
 .card:hover {
   box-shadow: 0 0 20px cyan, 0 0 40px magenta;
   transform: scale(1.05);
 }
 
-/* MOVING LIGHT EFFECT */
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(0,255,255,0.6), transparent);
-  transition: 0.5s;
+/* ICONS */
+.icons i {
+  font-size: 25px;
+  margin: 10px;
 }
 
-.card:hover::before {
-  left: 100%;
+/* SCROLL ANIMATION */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
