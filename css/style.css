@@ -1,78 +1,90 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  color: white;
 
-  /* 8K BACKGROUND IMAGE */
   background: url('../assets/neon-bg.png') no-repeat center center/cover;
 
-  height: 100vh;
-  overflow: hidden;
+  color: white;
 }
 
-/* CENTER PERFECT */
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  font-size: 15px;
+}
+
+.navbar h2 {
+  font-weight: 500;
+}
+
+.menu a {
+  margin-left: 35px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.75;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  opacity: 1;
+}
+
+/* CENTER CONTENT */
 .main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  width: 90%;
+  margin-top: 160px;
 }
 
-/* NAME (BIG + SHARP) */
+/* NAME (PIXEL MATCH GRADIENT) */
 .name {
-  font-size: 64px;
-  font-weight: 700;
+  font-size: 72px;
+  font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 10px;
 
-  color: #00eaff;
-  text-shadow: 0 0 5px #00eaff;
+  background: linear-gradient(
+    90deg,
+    #00eaff 0%,
+    #3b82f6 35%,
+    #8b5cf6 65%,
+    #ff00cc 100%
+  );
+
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* ROLE */
 .role {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #ffffff;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 500;
 }
 
-/* TOOLS (EXACT STYLE LIKE IMAGE) */
+/* TOOLS */
 .tools {
-  font-size: 16px;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #d1d5db;
 }
 
-/* EACH TOOL SAME STYLE */
-.tools span {
-  color: #00eaff;
-  text-shadow: 0 0 4px #00eaff;
-}
-
-/* EXPERIENCE */
-.exp {
-  font-size: 14px;
-  margin-bottom: 30px;
-  color: #ccc;
-}
-
-/* CV BUTTON TOP RIGHT */
+/* CV BUTTON */
 .cv-btn {
-  position: fixed;
-  top: 25px;
-  right: 40px;
-  padding: 10px 25px;
+  display: inline-block;
+  margin-top: 35px;
 
-  border: 1px solid #00eaff;
-  border-radius: 25px;
+  padding: 10px 35px;
+  border-radius: 30px;
 
+  border: 1.5px solid #00eaff;
   color: #00eaff;
-  text-decoration: none;
 
-  font-size: 14px;
-  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 15px;
 
   transition: 0.3s;
 }
@@ -80,45 +92,4 @@ body {
 .cv-btn:hover {
   background: #00eaff;
   color: black;
-}
-
-/* PROJECT BUTTONS */
-.projects {
-  margin-top: 20px;
-}
-
-.card {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 18px;
-
-  border: 1px solid #00eaff;
-  border-radius: 8px;
-
-  font-size: 14px;
-  letter-spacing: 1px;
-
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card:hover {
-  background: #00eaff;
-  color: black;
-}
-
-/* ICONS */
-.icons {
-  margin-top: 25px;
-}
-
-.icons i {
-  margin: 10px;
-  font-size: 20px;
-  color: #aaa;
-  transition: 0.3s;
-}
-
-.icons i:hover {
-  color: #00eaff;
 }
